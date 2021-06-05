@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "main": "src/loaders/index.js",
-  "type": "module",
   "scripts": {
-    "start": "nodemon index.js",
+    "babel-node": "babel-node",
+    "start": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/Vasya-007/concord-backend#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.4",
     "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
