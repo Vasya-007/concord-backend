@@ -1,3 +1,3 @@
-import startServer from "./loaders/startup";
+import startServer from './startup';
 
 startServer();

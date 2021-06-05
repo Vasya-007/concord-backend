@@ -2,12 +2,13 @@
   "name": "concord-backend",
   "version": "0.0.1",
   "description": "",
-  "main": "src/loaders/index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/Vasya-007/concord-backend#readme",
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@babel/eslint-parser": "^7.14.4",
     "@babel/node": "^7.14.2",
     "@babel/preset-env": "^7.14.4",
     "eslint": "^7.28.0",
@@ -38,6 +40,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "faker": "^5.5.3"
   }
 }
