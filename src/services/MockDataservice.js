@@ -12,5 +12,19 @@ class MockDataservice {
   getCoins() {
     return this.coinList;
   }
+
+  createCoin(coin) {
+    this.coinList.unshift(coin);
+    return coin;
+  }
+
+  shiftCoin(coin) {
+    this.coinList.shift(coin);
+    return coin;
+  }
+
+  resetCoin() {
+    this.coinList = [];
+  }
 }
 export default new MockDataservice();
