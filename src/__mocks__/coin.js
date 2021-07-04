@@ -18,7 +18,7 @@ import faker from 'faker';
 // eslint-disable-next-line import/prefer-default-export
 // eslint-disable-next-line arrow-body-style
 // eslint-disable-next-line import/prefer-default-export
-export function coinlistFactory(n = 50) {
+export function coinlistFactory(n = 10) {
   return [...new Array(n)].map(coinMockfactory);
 }
 
