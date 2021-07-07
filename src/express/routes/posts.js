@@ -1,17 +1,18 @@
-import MockDataService from '../../services/MockDataservice';
 import authMiddleware from '../middlewares/auth';
+import CoinService from '../../services/CoinService';
 
 export default function addCoinRoutes(app) {
-  app.get('/api/coin', authMiddleware, (req, res) => {
-    res.json(MockDataService.getCoins());
+  app.get('/api/coin', authMiddleware, async (req, res) => {
+    const coin = await CoinService.getCoins();
+    res.json(coin);
   });
 
-  app.get('/api/coin/:id', authMiddleware, (req, res) => {
+  app.get('/api/coin/:id', authMiddleware, async (req, res) => {
     const { params } = req;
-    const coin = MockDataService.findCoinId(params.id);
+    const coin = await CoinService.findCoinId(params.id);
 
     if (coin) {
-      res.json(MockDataService.findCoinId(params.id));
+      res.json(await CoinService.findCoinId(params.id));
     } else {
       res.status(500);
       res.json({
@@ -22,16 +23,16 @@ export default function addCoinRoutes(app) {
     }
   });
 
-  app.post('/api/coin/create', authMiddleware, (req, res) => {
+  app.post('/api/coin/create', authMiddleware, async (req, res) => {
     const { body: coin } = req;
 
-    MockDataService.createCoin(coin);
+    await CoinService.createCoin(coin);
 
     res.json({ status: 'ok' });
   });
 
-  app.post('/api/coin/reset', authMiddleware, (req, res) => {
-    MockDataService.resetCoin();
+  app.post('/api/coin/reset', authMiddleware, async (req, res) => {
+    await CoinService.resetCoin();
 
     res.json({ status: 'ok' });
   });

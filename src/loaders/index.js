@@ -11,5 +11,5 @@ export default async function RootLoader(app) {
   console.log('Start express server');
   expressLoader(app);
   console.log('Success');
-  fixturesLoader();
+  await fixturesLoader();
 }

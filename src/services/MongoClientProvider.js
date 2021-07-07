@@ -2,8 +2,6 @@ import { MongoClient } from 'mongodb';
 import config from '../constants/config';
 
 class MongoClientProvider {
-  connected = false;
-
   client;
 
   db;
