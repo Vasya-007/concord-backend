@@ -47,6 +47,6 @@
     "faker": "^5.5.3",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
-    "mongodb": "^3.6.9"
+    "mongodb": "^4.0.0"
   }
 }
